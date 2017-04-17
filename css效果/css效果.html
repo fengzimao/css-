@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css精选</title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			margin: 20px;
+			background: orange;
+			float: left;
+		}
+		.first{
+			box-shadow: 0 0 0 10px #655,/*最顶层,下面的依次往外叠加*/
+						0 0 0 15px deeppink,
+						0 2px 5px 15px rgba(0,0,0,0.6);
+		}
+		.second{
+			border: 5px solid yellow;
+			padding: 10px;
+			background: url(zheng.png) no-repeat #58a;
+			/*background-position: right 10px bottom 10px;*/
+			background-origin: content-box;/*padding-box;border-box;*/
+		}
+		.third{
+			background: linear-gradient(#bf3 50%,#58a 50%);
+		}
+		.four{
+			background: linear-gradient(#fb3 30%, #58a 30%);
+			background-size: 100% 30px;
+		}
+		.five{
+			background: linear-gradient(#bf3 33.33%,#58a 0,#58a 66.66%,yellowgreen 0);/*0代表过渡部分的百分百,也可以写别的比例,比前一个小就行*/
+			background-size: 100% 50px;
+		}
+		.six{
+			background: linear-gradient(45deg,#fb3 50%,#58a 0);
+		}
+		.seven{
+			transform: skewX(-45deg);
+		}
+		.eight{
+			/*background: linear-gradient(-135deg, transparent 20px, #58a 0);*/
+			/*background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,0.4) 0) no-repeat right top / 20px 20px;*/
+			background: linear-gradient(to left bottom, transparent 50%,rgba(0,0,0,0.4) 0) no-repeat right top / 28px 28px,linear-gradient(-135deg, transparent 20px, #58a 0);
+		}
+		.nine{
+			position: relative;
+			background: #58a;
+			background: linear-gradient(-150deg, transparent 30px, #58a 0);
+		}
+		.nine::before{
+			content: '';
+			position: absolute;
+			top: 0;right: 0;
+			background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,0.4) 0) 100% 0 no-repeat;
+			width: 34.6px;
+			height: 60px;
+			transform: translateY(-26px) rotate(-30deg);
+			transform-origin: bottom right;
+		}
+	</style>
+	<body>
+		<div class="first"></div>
+		<div class="second"></div>
+		<div class="third"></div>
+		<div class="four"></div>
+		<div class="five"></div>
+		<div class="six"></div>
+		<div class="seven"></div>
+		<div class="eight"></div>
+		<div class="nine"></div>
+	</body>
+</html>
